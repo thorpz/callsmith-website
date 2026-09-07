@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | Callsmith</title>
+<meta name="description" content="Get in touch with the Callsmith team about pricing, features, or booking a demo.">
+<meta name="theme-color" content="#F5850B">
+<meta property="og:title" content="Contact | Callsmith">
+<meta property="og:description" content="Get in touch with the Callsmith team.">
+<meta property="og:type" content="website">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<header id="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo"><img src="assets/callsmith-logo-wordmark.png" alt="Callsmith"></a>
+    <nav class="primary-nav">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how-it-works">How it works</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+    <div class="header-actions">
+      <a href="contact.html" class="btn btn-secondary hide-mobile-btn active" style="padding:12px 18px;">Contact</a>
+      <button class="btn btn-primary" data-open-modal>Book a demo</button>
+      <button class="burger" id="burgerBtn" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-panel" id="mobilePanel">
+  <div class="container">
+    <a href="index.html#features" class="mnav-link">Features</a>
+    <a href="index.html#how-it-works" class="mnav-link">How it works</a>
+    <a href="pricing.html" class="mnav-link">Pricing</a>
+    <a href="faq.html" class="mnav-link">FAQ</a>
+    <a href="contact.html" class="mnav-link">Contact</a>
+    <button class="btn btn-primary btn-block" data-open-modal>Book a demo</button>
+  </div>
+</div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>We'd love to hear from you</h1>
+      <p class="lead">Questions about pricing, features, or whether Callsmith fits your trade? Send us a message and we'll get back to you within one business day.</p>
+    </div>
+  </section>
+
+  <section class="contact-wrap">
+    <div class="container contact-grid">
+
+      <div class="contact-info-card reveal">
+        <h3>Get in touch</h3>
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:hello@callsmith.ai">hello@callsmith.ai</a>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+          <div>
+            <strong>Response time</strong>
+            <span>Within one business day</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <strong>Where we work</strong>
+            <span>Remote-first, serving trades Australia-wide</span>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ci-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <div>
+            <strong>Already a customer?</strong>
+            <span>Mention your business name and we'll route you straight to support.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-form-card reveal">
+        <h2>Send a message</h2>
+        <p class="modal-sub">Fill in the form below and we'll be in touch soon.</p>
+        <form id="contactForm">
+          <div class="form-cols">
+            <div class="form-row">
+              <label for="cname">Full name</label>
+              <input type="text" id="cname" required>
+            </div>
+            <div class="form-row">
+              <label for="cemail">Email</label>
+              <input type="email" id="cemail" required>
+            </div>
+          </div>
+          <div class="form-cols">
+            <div class="form-row">
+              <label for="cbusiness">Business name (optional)</label>
+              <input type="text" id="cbusiness">
+            </div>
+            <div class="form-row">
+              <label for="ctopic">What's this about?</label>
+              <select id="ctopic" required>
+                <option value="">Select a topic</option>
+                <option>Booking a demo</option>
+                <option>Pricing question</option>
+                <option>Existing customer support</option>
+                <option>Partnerships</option>
+                <option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="cmessage">Message</label>
+            <textarea id="cmessage" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send message</button>
+        </form>
+        <div class="form-success" id="contactSuccess">
+          <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+          <h3>Message sent</h3>
+          <p class="modal-sub">Thanks for reaching out. A member of the Callsmith team will reply within one business day.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container inner">
+      <span class="eyebrow on-dark">Prefer to talk it through?</span>
+      <h2>Book a live demo instead</h2>
+      <p>See exactly how Callsmith would handle your next incoming call, in fifteen minutes.</p>
+      <div class="btn-row">
+        <button class="btn btn-primary" data-open-modal>Book a demo</button>
+        <a href="faq.html" class="btn btn-ghost-dark">Read the FAQ</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo"><img src="assets/callsmith-logo-wordmark.png" alt="Callsmith" style="filter:brightness(0) invert(1);"></a>
+      <p>The AI receptionist built for tradies. Answer every call, book more jobs, and never chase a voicemail again.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z"/></svg></a>
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.16.5.5.9 1.11 1.16 1.77.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.16 1.77 4.9 4.9 0 0 1-1.77 1.16c-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.16 4.9 4.9 0 0 1-1.16-1.77c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.22 1.16-1.77a4.9 4.9 0 0 1 1.77-1.16c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 1-2.4 0 1.2 1.2 0 0 1 2.4 0z"/></svg></a>
+        <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V21H17v-5.3c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.8V21H9z"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Product</h4>
+      <ul>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#how-it-works">How it works</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#testimonials">Customers</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="privacy-policy.html">Privacy policy</a></li>
+        <li><a href="terms-of-service.html">Terms of service</a></li>
+        <li><a href="security.html">Security</a></li>
+      </ul>
+    </div>
+    <div class="footer-newsletter">
+      <h4>Stay in the loop</h4>
+      <p>Tips for tradies on winning more work, straight to your inbox.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="you@business.com" required aria-label="Email address">
+        <button type="submit">Join</button>
+      </form>
+      <p class="newsletter-note" id="newsletterNote">No spam. Unsubscribe any time.</p>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> Callsmith. All rights reserved.</span>
+    <div class="footer-bottom-links">
+      <a href="privacy-policy.html">Privacy</a>
+      <a href="terms-of-service.html">Terms</a>
+      <a href="security.html">Security</a>
+    </div>
+  </div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <div id="formWrap">
+      <h3>Book your demo</h3>
+      <p class="modal-sub">Tell us a bit about your business and we'll be in touch within one business day.</p>
+      <form id="demoForm">
+        <div class="form-cols">
+          <div class="form-row">
+            <label for="fname">Full name</label>
+            <input type="text" id="fname" required>
+          </div>
+          <div class="form-row">
+            <label for="fphone">Phone</label>
+            <input type="tel" id="fphone" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="fbusiness">Business name</label>
+          <input type="text" id="fbusiness" required>
+        </div>
+        <div class="form-row">
+          <label for="ftrade">Trade</label>
+          <select id="ftrade" required>
+            <option value="">Select your trade</option>
+            <option>Electrician</option>
+            <option>Plumber</option>
+            <option>HVAC</option>
+            <option>Roofing</option>
+            <option>Landscaping</option>
+            <option>Carpentry</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="fmessage">Anything we should know? (optional)</label>
+          <textarea id="fmessage" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Request demo</button>
+      </form>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <div class="success-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <h3>You're all set</h3>
+      <p class="modal-sub">Thanks. A member of the Callsmith team will reach out within one business day to book your demo.</p>
+      <button class="btn btn-secondary btn-block" id="closeSuccess">Close</button>
+    </div>
+  </div>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="assets/site.js"></script>
+</body>
+</html>
