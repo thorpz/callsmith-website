@@ -23,6 +23,30 @@
     });
   });
 
+  // Offer carousel — swipeable on mobile, dots reflect scroll position (CSS gates the swipe layout)
+  var offerTrack = document.getElementById('offerCarouselTrack');
+  var offerDots = document.getElementById('offerCarouselDots');
+  if(offerTrack && offerDots){
+    var dots = Array.prototype.slice.call(offerDots.querySelectorAll('.offer-dot'));
+    dots.forEach(function(dot){
+      dot.addEventListener('click', function(){
+        var item = offerTrack.children[Number(dot.dataset.index)];
+        if(item) item.scrollIntoView({behavior:'smooth', inline:'center', block:'nearest'});
+      });
+    });
+    var scrollTimeout;
+    offerTrack.addEventListener('scroll', function(){
+      clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function(){
+        var itemWidth = offerTrack.children[0] ? offerTrack.children[0].offsetWidth + 16 : offerTrack.clientWidth;
+        var index = Math.round(offerTrack.scrollLeft / itemWidth);
+        dots.forEach(function(dot, i){
+          dot.classList.toggle('is-active', i === index);
+        });
+      }, 80);
+    });
+  }
+
   // Mobile menu
   var burger = document.getElementById('burgerBtn');
   var panel = document.getElementById('mobilePanel');
@@ -122,25 +146,6 @@
       }
     });
   });
-
-  // Pricing billing toggle
-  var toggle = document.getElementById('billingToggle');
-  if(toggle){
-    var labelMonthly = document.getElementById('labelMonthly');
-    var labelYearly = document.getElementById('labelYearly');
-    var amounts = document.querySelectorAll('.price-amount .amt, .compare-amt');
-    var yearly = false;
-    toggle.addEventListener('click', function(){
-      yearly = !yearly;
-      toggle.classList.toggle('on', yearly);
-      if(labelMonthly) labelMonthly.classList.toggle('active', !yearly);
-      if(labelYearly) labelYearly.classList.toggle('active', yearly);
-      amounts.forEach(function(el){
-        var val = yearly ? el.getAttribute('data-yearly') : el.getAttribute('data-monthly');
-        if(val) el.textContent = '$' + val;
-      });
-    });
-  }
 
   // Modal (Book a demo)
   var overlay = document.getElementById('modalOverlay');
