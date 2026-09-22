@@ -86,18 +86,6 @@ button{font-family:inherit;cursor:pointer;}
   position:relative;
 }
 .card-top img.wordmark{height:26px;width:auto;filter:brightness(0) invert(1);opacity:0.95;}
-.badge-live{
-  position:absolute;top:24px;right:24px;
-  display:inline-flex;align-items:center;gap:7px;
-  font-size:0.7rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
-  color:#FFE9CE;
-  background:rgba(255,255,255,0.08);
-  border:1px solid rgba(255,255,255,0.14);
-  border-radius:100px;padding:5px 11px;
-}
-.badge-live i{width:6px;height:6px;border-radius:50%;background:var(--green);display:block;box-shadow:0 0 0 0 rgba(47,184,107,0.7);animation:pulse 2.2s infinite;}
-@keyframes pulse{70%{box-shadow:0 0 0 7px rgba(47,184,107,0);}100%{box-shadow:0 0 0 0 rgba(47,184,107,0);}}
-
 /* ---------- Identity ---------- */
 .identity{padding:0 24px 22px;margin-top:-38px;position:relative;z-index:1;}
 .avatar{
@@ -207,14 +195,13 @@ button{font-family:inherit;cursor:pointer;}
 <main class="card">
   <div class="card-top">
     <a href="index.html"><img class="wordmark" id="wordmark" src="assets/callsmith-logo-wordmark.png" alt="Callsmith"></a>
-    <span class="badge-live"><i></i>24/7</span>
   </div>
 
   <section class="identity">
     <div class="avatar" id="avatar">ZT</div>
     <h1 id="fullName">Zaine Thorp</h1>
     <p class="role"><span id="jobTitle">Founder</span> &middot; <span id="company">Callsmith</span></p>
-    <p class="tagline" id="tagline">The AI receptionist for tradies. Answers every call, books the job, texts you the details, 24/7.</p>
+    <p class="tagline" id="tagline">The AI receptionist for tradies. Answers every call and email enquiry, books the job, sends you the details, 24/7.</p>
   </section>
 
   <div class="actions">
