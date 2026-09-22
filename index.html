@@ -31,7 +31,7 @@
 }
 </script>
 
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="assets/styles.css?v=3">
 </head>
 <body>
 
@@ -311,7 +311,7 @@
       <div class="demo-copy reveal">
         <span class="eyebrow on-dark">Try it right now</span>
         <h2 style="margin-top:16px;">Get a call from Claire, Callsmith's very own receptionist</h2>
-        <p class="lead">Pop in your number below and Claire will call you within seconds. No forms, no waiting on hold, just answer your phone and hear exactly how it sounds when she tries to book you in.</p>
+        <p class="lead">Pop in your number and Claire calls you within seconds, so you can hear exactly how it sounds when she tries to book you in. The live demo is down for maintenance at the moment, so book a demo and we'll run you through it ourselves.</p>
         <ul class="demo-list">
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Natural, human-sounding conversation</li>
           <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span> Understands trade-specific jobs and urgency</li>
@@ -335,6 +335,7 @@
             <div class="call-role">Callsmith AI Receptionist</div>
 
             <div class="phone-state" id="phoneIdle">
+              <p class="maintenance-pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>Temporarily down for maintenance</p>
               <p class="phone-hint">Enter your number to get a call</p>
               <input
                 type="tel"
@@ -348,6 +349,14 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               </button>
               <p class="call-consent">By tapping call, you agree to receive a call and a follow-up text from Callsmith.</p>
+            </div>
+
+            <div class="phone-state" id="phoneMaintenance" hidden>
+              <span class="maintenance-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
+              <p class="phone-status-line"><strong>Claire is offline for maintenance</strong></p>
+              <p class="maintenance-note">We've taken it down while we work on it. Book a demo and we'll walk you through it properly.</p>
+              <button class="btn btn-primary" data-open-modal style="margin-top:4px;">Book a demo</button>
+              <button type="button" id="phoneBackBtn" class="maintenance-back">Back</button>
             </div>
 
             <div class="phone-state" id="phoneCalling" hidden>
@@ -652,7 +661,7 @@
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<script src="assets/site.js"></script>
+<script src="assets/site.js?v=3"></script>
 
 </body>
 </html>

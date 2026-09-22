@@ -200,6 +200,9 @@
   //     headers: {'Content-Type':'application/json'},
   //     body: JSON.stringify({ phone: callPhone.value })
   //   }).then(res => res.ok ? goToConnected() : goToIdle());
+  // Set to false to bring the live call demo back.
+  var CALL_DEMO_MAINTENANCE = true;
+
   var phoneCallBtn = document.getElementById('phoneCallBtn');
   if(phoneCallBtn){
     var callPhone = document.getElementById('callPhone');
@@ -211,14 +214,20 @@
     var callTimer = document.getElementById('callTimer');
     var phoneCancelBtn = document.getElementById('phoneCancelBtn');
     var phoneHangupBtn = document.getElementById('phoneHangupBtn');
+    var phoneMaintenance = document.getElementById('phoneMaintenance');
+    var phoneBackBtn = document.getElementById('phoneBackBtn');
+
+    // While the demo is off there is no call to consent to, and hiding that line
+    // keeps the idle state inside the phone frame alongside the notice.
+    if(CALL_DEMO_MAINTENANCE) phoneIdle.classList.add('is-maintenance');
 
     var connectTimeout = null;
     var timerInterval = null;
     var elapsedSeconds = 0;
 
     function showState(el){
-      [phoneIdle, phoneCalling, phoneConnected].forEach(function(s){
-        s.hidden = (s !== el);
+      [phoneIdle, phoneCalling, phoneConnected, phoneMaintenance].forEach(function(s){
+        if(s) s.hidden = (s !== el);
       });
     }
 
@@ -246,6 +255,10 @@
     }
 
     phoneCallBtn.addEventListener('click', function(){
+      if(CALL_DEMO_MAINTENANCE){
+        showState(phoneMaintenance);
+        return;
+      }
       if(!callPhone.value.trim()){
         callPhone.focus();
         return;
@@ -260,6 +273,7 @@
 
     if(phoneCancelBtn) phoneCancelBtn.addEventListener('click', goToIdle);
     if(phoneHangupBtn) phoneHangupBtn.addEventListener('click', goToIdle);
+    if(phoneBackBtn) phoneBackBtn.addEventListener('click', goToIdle);
   }
 
   // Standalone contact form (contact.html): client-side placeholder
