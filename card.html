@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Zaine Thorp | Callsmith</title>
+<meta name="description" content="Digital business card for Zaine Thorp at Callsmith, the AI receptionist built for tradies.">
+<meta name="theme-color" content="#171310">
+
+<!-- Open Graph: this is what shows when the card link is texted or emailed -->
+<meta property="og:title" content="Zaine Thorp | Callsmith">
+<meta property="og:description" content="AI receptionist for tradies. Tap to call, email, or save my contact.">
+<meta property="og:type" content="profile">
+<meta property="og:image" content="assets/callsmith-icon-square.png">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   EDIT YOUR DETAILS IN THE <script> BLOCK AT THE BOTTOM OF THIS
+   FILE (look for "const CARD = {"). Nothing else needs changing.
+   ============================================================ */
+:root{
+  --cream:#FDF9F5;
+  --cream-2:#FBEFE1;
+  --white:#FFFFFF;
+  --ink:#18140F;
+  --ink-soft:#59524A;
+  --ink-faint:#8A8177;
+  --line:#EEE3D4;
+  --line-strong:#E4D6C3;
+  --orange:#F5850B;
+  --orange-dark:#D9700A;
+  --orange-wash:#FEF1DF;
+  --green:#2FB86B;
+  --dark:#171310;
+  --dark-2:#221C15;
+  --radius-lg:6px;
+  --radius-md:4px;
+  --shadow-soft:0 10px 24px -10px rgba(23,19,16,0.35);
+  --shadow-card:0 6px 16px -8px rgba(23,19,16,0.22);
+  --grad-orange:linear-gradient(135deg,#FF9E3D 0%, #F5850B 55%, #E2690A 100%);
+}
+*,*::before,*::after{box-sizing:border-box;}
+body{
+  margin:0;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding:clamp(16px,4vw,48px) 16px;
+}
+h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;line-height:1.1;margin:0;letter-spacing:-0.02em;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;list-style:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;}
+
+.card{
+  width:100%;
+  max-width:420px;
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-soft);
+  overflow:hidden;
+}
+
+/* ---------- Top band ---------- */
+.card-top{
+  background:var(--dark);
+  background-image:radial-gradient(120% 140% at 85% -20%, rgba(245,133,11,0.32) 0%, rgba(245,133,11,0) 58%);
+  padding:22px 24px 58px;
+  position:relative;
+}
+.card-top img.wordmark{height:26px;width:auto;filter:brightness(0) invert(1);opacity:0.95;}
+.badge-live{
+  position:absolute;top:24px;right:24px;
+  display:inline-flex;align-items:center;gap:7px;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
+  color:#FFE9CE;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.14);
+  border-radius:100px;padding:5px 11px;
+}
+.badge-live i{width:6px;height:6px;border-radius:50%;background:var(--green);display:block;box-shadow:0 0 0 0 rgba(47,184,107,0.7);animation:pulse 2.2s infinite;}
+@keyframes pulse{70%{box-shadow:0 0 0 7px rgba(47,184,107,0);}100%{box-shadow:0 0 0 0 rgba(47,184,107,0);}}
+
+/* ---------- Identity ---------- */
+.identity{padding:0 24px 22px;margin-top:-38px;position:relative;z-index:1;}
+.avatar{
+  width:76px;height:76px;border-radius:var(--radius-lg);
+  background:var(--grad-orange);
+  border:3px solid var(--white);
+  box-shadow:var(--shadow-card);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;
+  letter-spacing:-0.02em;
+  overflow:hidden;
+}
+.avatar img{width:100%;height:100%;object-fit:cover;}
+.identity h1{font-size:1.5rem;margin-top:14px;}
+.role{color:var(--ink-soft);font-weight:600;font-size:0.95rem;margin-top:4px;}
+.tagline{
+  margin-top:12px;color:var(--ink-soft);font-size:0.9rem;
+  border-left:3px solid var(--orange);padding-left:11px;
+}
+
+/* ---------- Actions ---------- */
+.actions{padding:0 24px 4px;display:grid;gap:9px;}
+.btn{
+  display:flex;align-items:center;gap:12px;width:100%;
+  padding:13px 15px;border-radius:var(--radius-md);
+  font-size:0.94rem;font-weight:600;text-align:left;
+  border:1px solid var(--line-strong);background:var(--white);color:var(--ink);
+  transition:transform .12s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn:hover{background:var(--cream);box-shadow:var(--shadow-card);}
+.btn:active{transform:translateY(1px);}
+.btn svg{width:19px;height:19px;flex:0 0 19px;stroke-width:2;}
+.btn .sub{margin-left:auto;font-size:0.8rem;color:var(--ink-faint);font-weight:500;}
+.btn-primary{
+  background:var(--grad-orange);border-color:transparent;color:#fff;
+  font-weight:700;box-shadow:0 6px 16px -8px rgba(226,105,10,0.85);
+  justify-content:center;text-align:center;
+}
+.btn-primary:hover{background:var(--grad-orange);filter:brightness(1.04);}
+.btn-primary .sub{color:rgba(255,255,255,0.8);margin-left:0;}
+.btn-dark{background:var(--dark);border-color:var(--dark);color:#fff;justify-content:center;font-weight:700;}
+.btn-dark:hover{background:var(--dark-2);}
+
+.divider{display:flex;align-items:center;gap:12px;padding:18px 24px 14px;color:var(--ink-faint);font-size:0.72rem;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;}
+.divider::before,.divider::after{content:"";height:1px;background:var(--line);flex:1;}
+
+/* ---------- What we do ---------- */
+.pitch{padding:0 24px;}
+.pitch ul{display:grid;gap:9px;}
+.pitch li{display:flex;gap:10px;font-size:0.88rem;color:var(--ink-soft);align-items:flex-start;}
+.pitch li svg{width:16px;height:16px;flex:0 0 16px;margin-top:3px;color:var(--orange-dark);stroke-width:2.6;}
+.pitch li strong{color:var(--ink);font-weight:600;}
+
+/* ---------- QR ---------- */
+.qr-wrap{padding:20px 24px 4px;display:flex;gap:16px;align-items:center;}
+.qr-box{
+  width:104px;height:104px;flex:0 0 104px;
+  background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);
+  padding:7px;display:flex;align-items:center;justify-content:center;
+}
+.qr-box canvas,.qr-box img{width:100%!important;height:100%!important;display:block;}
+.qr-copy{font-size:0.82rem;color:var(--ink-soft);}
+.qr-copy strong{display:block;color:var(--ink);font-size:0.9rem;font-weight:700;margin-bottom:3px;font-family:'Plus Jakarta Sans',sans-serif;}
+
+/* ---------- Footer ---------- */
+.card-foot{
+  margin-top:20px;padding:15px 24px;
+  background:var(--cream-2);border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  font-size:0.78rem;color:var(--ink-soft);
+}
+.card-foot a{font-weight:700;color:var(--orange-dark);}
+
+.page-note{
+  max-width:420px;margin:16px auto 0;text-align:center;
+  font-size:0.76rem;color:var(--ink-faint);
+}
+
+/* ---------- Toast ---------- */
+.toast{
+  position:fixed;left:50%;bottom:26px;transform:translate(-50%,16px);
+  background:var(--dark);color:#fff;font-size:0.85rem;font-weight:600;
+  padding:11px 18px;border-radius:100px;box-shadow:var(--shadow-soft);
+  opacity:0;pointer-events:none;transition:opacity .2s ease, transform .2s ease;z-index:50;
+}
+.toast.show{opacity:1;transform:translate(-50%,0);}
+
+@media print{
+  body{padding:0;background:#fff;}
+  .card{box-shadow:none;border-color:#ccc;max-width:100%;}
+  .actions,.page-note,.toast{display:none;}
+}
+</style>
+</head>
+<body>
+
+<main class="card">
+  <div class="card-top">
+    <a href="index.html"><img class="wordmark" id="wordmark" src="assets/callsmith-logo-wordmark.png" alt="Callsmith"></a>
+    <span class="badge-live"><i></i>24/7</span>
+  </div>
+
+  <section class="identity">
+    <div class="avatar" id="avatar">ZT</div>
+    <h1 id="fullName">Zaine Thorp</h1>
+    <p class="role"><span id="jobTitle">Founder</span> &middot; <span id="company">Callsmith</span></p>
+    <p class="tagline" id="tagline">The AI receptionist for tradies. Answers every call, books the job, texts you the details, 24/7.</p>
+  </section>
+
+  <div class="actions">
+    <a class="btn" id="linkPhone" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span id="phoneLabel">Call me</span><span class="sub">Tap to dial</span>
+    </a>
+    <a class="btn" id="linkEmail" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+      <span id="emailLabel">Email me</span><span class="sub">Tap to send</span>
+    </a>
+    <a class="btn" id="linkSite" href="#">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span id="siteLabel">callsmith.online</span><span class="sub">Website</span>
+    </a>
+    <button class="btn btn-primary" id="btnSave">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      Save my contact
+    </button>
+    <button class="btn btn-dark" id="btnShare">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M16 6l-4-4-4 4M12 2v13"/></svg>
+      Share this card
+    </button>
+  </div>
+
+  <div class="divider">What Callsmith does</div>
+
+  <div class="pitch">
+    <ul>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span><strong>Answers every call</strong> in about 2 seconds, day or night, so no job goes to the next name on the list.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span><strong>Books jobs straight into your calendar</strong> and qualifies the lead before it reaches you.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span><strong>Texts you a summary</strong> of who called, what they need and when they need it.</span>
+      </li>
+      <li>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+        <span><strong>Sounds like your business,</strong> with scripts built around how you actually want calls handled.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="qr-wrap">
+    <div class="qr-box" id="qrBox"></div>
+    <div class="qr-copy">
+      <strong>Scan to keep this card</strong>
+      Point a phone camera here and my details go straight into their contacts.
+    </div>
+  </div>
+
+  <div class="card-foot">
+    <span>Callsmith &middot; Australia-wide</span>
+    <a href="contact.html" id="demoLink">Book a demo &rarr;</a>
+  </div>
+</main>
+
+<p class="page-note">Tap "Save my contact" to add me to your phone.</p>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* ==========================================================
+   YOUR DETAILS — edit these values, everything else updates.
+   Leave a field as an empty string ("") to hide that button.
+   ========================================================== */
+const CARD = {
+  firstName : "Zaine",
+  lastName  : "Thorp",
+  initials  : "ZT",                       // shown if photo is empty
+  photo     : "",                         // e.g. "assets/zaine.jpg"
+  jobTitle  : "Founder",
+  company   : "Callsmith",
+  phone     : "+61400000000",             // <-- PUT YOUR REAL MOBILE HERE
+  phoneShown: "0400 000 000",             // <-- and how it should read
+  email     : "hello@callsmith.ai",
+  website   : "https://callsmith.online",
+  cardUrl   : "https://callsmith.online/card.html",  // used for QR + share
+  tagline   : "The AI receptionist for tradies. Answers every call, books the job, texts you the details, 24/7.",
+  note      : "AI receptionist for tradies. We answer, qualify and book every call, 24/7."
+};
+
+/* ---------- Fill the card ---------- */
+const $ = id => document.getElementById(id);
+const fullName = (CARD.firstName + " " + CARD.lastName).trim();
+
+document.title = fullName + " | " + CARD.company;
+$("fullName").textContent = fullName;
+$("jobTitle").textContent = CARD.jobTitle;
+$("company").textContent  = CARD.company;
+$("tagline").textContent  = CARD.tagline;
+
+if (CARD.photo) {
+  $("avatar").innerHTML = '<img src="' + CARD.photo + '" alt="' + fullName + '">';
+} else {
+  $("avatar").textContent = CARD.initials || (CARD.firstName[0] + CARD.lastName[0]);
+}
+
+function wire(linkId, labelId, href, label){
+  const a = $(linkId);
+  if (!href) { a.style.display = "none"; return; }
+  a.href = href;
+  $(labelId).textContent = label;
+}
+wire("linkPhone", "phoneLabel", CARD.phone ? "tel:" + CARD.phone.replace(/\s/g, "") : "", CARD.phoneShown || CARD.phone);
+wire("linkEmail", "emailLabel", CARD.email ? "mailto:" + CARD.email : "", CARD.email);
+wire("linkSite",  "siteLabel",  CARD.website, CARD.website.replace(/^https?:\/\//, ""));
+
+/* ---------- Toast ---------- */
+let toastTimer;
+function toast(msg){
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2400);
+}
+
+/* ---------- Save contact (vCard 3.0, widest phone support) ---------- */
+function buildVCard(){
+  const lines = [
+    "BEGIN:VCARD",
+    "VERSION:3.0",
+    "N:" + CARD.lastName + ";" + CARD.firstName + ";;;",
+    "FN:" + fullName,
+    "ORG:" + CARD.company,
+    "TITLE:" + CARD.jobTitle
+  ];
+  if (CARD.phone)   lines.push("TEL;TYPE=CELL,VOICE:" + CARD.phone);
+  if (CARD.email)   lines.push("EMAIL;TYPE=WORK,INTERNET:" + CARD.email);
+  if (CARD.website) lines.push("URL:" + CARD.website);
+  if (CARD.note)    lines.push("NOTE:" + CARD.note.replace(/,/g, "\\,"));
+  lines.push("END:VCARD");
+  return lines.join("\r\n");
+}
+
+$("btnSave").addEventListener("click", () => {
+  const blob = new Blob([buildVCard()], { type: "text/vcard;charset=utf-8" });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement("a");
+  a.href = url;
+  a.download = fullName.replace(/\s+/g, "-").toLowerCase() + ".vcf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1500);
+  toast("Contact downloaded — open it to save");
+});
+
+/* ---------- Share ---------- */
+$("btnShare").addEventListener("click", async () => {
+  const shareData = {
+    title: fullName + " | " + CARD.company,
+    text : CARD.jobTitle + " at " + CARD.company,
+    url  : CARD.cardUrl
+  };
+  if (navigator.share) {
+    try { await navigator.share(shareData); } catch (e) { /* user cancelled */ }
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(CARD.cardUrl);
+    toast("Link copied to clipboard");
+  } catch (e) {
+    toast(CARD.cardUrl);
+  }
+});
+
+/* ---------- QR code of the card URL ---------- */
+if (window.QRCode) {
+  new QRCode($("qrBox"), {
+    text: CARD.cardUrl,
+    width: 180,
+    height: 180,
+    colorDark: "#18140F",
+    colorLight: "#FFFFFF",
+    correctLevel: QRCode.CorrectLevel.M
+  });
+} else {
+  $("qrBox").parentElement.style.display = "none";
+}
+</script>
+
+</body>
+</html>
