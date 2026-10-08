@@ -1,4 +1,17 @@
 (function(){
+  // Where enquiries go. There is no backend: forms open a pre-filled text (on phones)
+  // or email (on computers) to Zaine, so nothing gets silently dropped.
+  var ZAINE_SMS = '+61466593891';
+  var ZAINE_EMAIL = 'zaine.michael.thorp@gmail.com';
+  function sendToZaine(subject, body){
+    var isPhone = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if(isPhone){
+      window.location.href = 'sms:' + ZAINE_SMS + '?&body=' + encodeURIComponent(body);
+    } else {
+      window.location.href = 'mailto:' + ZAINE_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  }
+
   // Sticky header shadow
   var header = document.getElementById('site-header');
   var backToTop = document.getElementById('backToTop');
@@ -184,6 +197,14 @@
     if(demoForm){
       demoForm.addEventListener('submit', function(e){
         e.preventDefault();
+        function val(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+        var body = "Hi Zaine, I'd like a 15-min chat about a Callsmith AI receptionist.\n" +
+          "Name: " + val('fname') + "\n" +
+          "Business: " + val('fbusiness') + "\n" +
+          "Trade: " + val('ftrade') + "\n" +
+          "Mobile: " + val('fphone') + "\n" +
+          "Best time: " + val('ftime');
+        sendToZaine("Callsmith chat: " + val('fbusiness'), body);
         if(formWrap) formWrap.style.display='none';
         if(formSuccess) formSuccess.classList.add('show');
       });
@@ -276,11 +297,19 @@
     if(phoneBackBtn) phoneBackBtn.addEventListener('click', goToIdle);
   }
 
-  // Standalone contact form (contact.html): client-side placeholder
+  // Standalone contact form (contact.html): opens a pre-filled email to Zaine
   var contactForm = document.getElementById('contactForm');
   if(contactForm){
     contactForm.addEventListener('submit', function(e){
       e.preventDefault();
+      function cval(id){ var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+      var cbody = cval('cmessage') + "\n\n" +
+        "Name: " + cval('cname') + "\n" +
+        "Email: " + cval('cemail') + "\n" +
+        "Business: " + cval('cbusiness');
+      window.location.href = 'mailto:' + ZAINE_EMAIL +
+        '?subject=' + encodeURIComponent('Callsmith: ' + (cval('ctopic') || 'Enquiry')) +
+        '&body=' + encodeURIComponent(cbody);
       var success = document.getElementById('contactSuccess');
       if(success){
         contactForm.style.display = 'none';

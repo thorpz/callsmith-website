@@ -1009,6 +1009,29 @@ footer{background:var(--dark-2);color:rgba(255,255,255,0.7);padding:70px 0 0;}
 }
 .form-success .success-icon svg{width:28px;height:28px;}
 
+/* ===== Honest-site additions (Oct 2026) ===== */
+.modal .btn svg{width:18px;height:18px;}
+.modal-mini{font-size:0.82rem;color:var(--ink-faint);margin:10px 0 0;line-height:1.5;}
+.modal-divider{display:flex;align-items:center;gap:12px;margin:22px 0 18px;color:var(--ink-faint);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em;}
+.modal-divider::before,.modal-divider::after{content:"";flex:1;height:1px;background:var(--line);}
+.hero-note{margin-top:14px;font-size:0.9rem;color:var(--ink-faint);}
+.hero-btn-row .btn svg{width:18px;height:18px;}
+.ring-state{display:flex;flex-direction:column;align-items:center;}
+.ring-number{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.6rem;color:#fff;letter-spacing:.02em;margin:0 0 18px;}
+.ring-state .call-action-btn{display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;}
+.testi-card .pp-num{
+  width:36px;height:36px;border-radius:4px;background:var(--grad-orange);color:#fff;
+  font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;
+}
+.founder-strip{display:flex;align-items:center;gap:16px;margin-top:28px;padding:20px 22px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius-md);}
+.founder-strip strong{display:block;font-size:1rem;margin-bottom:2px;}
+.founder-strip span{display:block;font-size:0.92rem;color:var(--ink-soft);line-height:1.5;}
+.founder-strip a{color:var(--orange-dark);font-weight:700;text-decoration:underline;}
+.footer-call{display:inline-flex;align-items:center;gap:8px;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;margin-bottom:6px;}
+.footer-call svg{width:18px;height:18px;color:var(--orange);}
+.footer-newsletter .newsletter-note a{color:#fff;text-decoration:underline;}
+.founding-pill{display:inline-block;margin-top:18px;padding:10px 16px;border-radius:4px;background:var(--orange-wash);color:var(--orange-dark);font-weight:700;font-size:0.95rem;}
+
 /* ===== Back to top ===== */
 .back-to-top{
   position:fixed;
